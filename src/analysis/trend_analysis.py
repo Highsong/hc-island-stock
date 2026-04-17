@@ -1,5 +1,5 @@
 # src/analysis/trend_analysis.py
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Any
 import numpy as np
 
 class TrendAnalysis:
