@@ -1,0 +1,189 @@
+{
+  "holdings": [
+    {
+      "name": "腾讯控股",
+      "code": "00700",
+      "exchange": "HK",
+      "category": "港股行业",
+      "buy_point": 46500,
+      "sell_point": 128000,
+      "start_date": "2025-02-08",
+      "weeks": 17,
+      "market_cap": 0,
+      "weight": 55
+    },
+    {
+      "name": "贵州茅台",
+      "code": "600519",
+      "exchange": "SH",
+      "category": "A股行业",
+      "buy_point": 16800,
+      "sell_point": 47000,
+      "start_date": "2025-03-05",
+      "weeks": 15,
+      "market_cap": 0,
+      "weight": 16
+    },
+    {
+      "name": "分众传媒",
+      "code": "002027",
+      "exchange": "SZ",
+      "category": "A股行业",
+      "buy_point": 890,
+      "sell_point": 1900,
+      "start_date": "2025-02-08",
+      "weeks": 17,
+      "market_cap": 0,
+      "weight": 12
+    },
+    {
+      "name": "古井贡B",
+      "code": "200596",
+      "exchange": "SZ",
+      "category": "B股行业",
+      "buy_point": 790,
+      "sell_point": 1900,
+      "start_date": "2025-02-22",
+      "weeks": 16,
+      "market_cap": 0,
+      "weight": 7
+    },
+    {
+      "name": "银华日利",
+      "code": "511880",
+      "exchange": "SH",
+      "category": "A股行业",
+      "buy_point": 0,
+      "sell_point": 0,
+      "start_date": "2025-02-22",
+      "weeks": 16,
+      "market_cap": 0,
+      "weight": 6
+    },
+    {
+      "name": "海康威视",
+      "code": "002415",
+      "exchange": "SZ",
+      "category": "A股行业",
+      "buy_point": 1920,
+      "sell_point": 5700,
+      "start_date": "2025-04-01",
+      "weeks": 14,
+      "market_cap": 0,
+      "weight": 4
+    },
+    {
+      "name": "沪深300",
+      "code": "510310",
+      "exchange": "SH",
+      "category": "A股宽基",
+      "buy_point": 0,
+      "sell_point": 0,
+      "start_date": "2021-01-01",
+      "weeks": 0,
+      "market_cap": 4.627
+    },
+    {
+      "name": "实盘净值",
+      "code": "",
+      "exchange": "",
+      "category": "实盘",
+      "buy_point": 0,
+      "sell_point": 0,
+      "start_date": "2021-01-06",
+      "weeks": 0,
+      "market_cap": 0,
+      "current_price": 0.8632,
+      "last_week_price": 0.8735,
+      "year_start_price": 1.0125
+    },
+    {
+      "name": "港币汇率",
+      "code": "HKDCNY",
+      "exchange": "FX",
+      "category": "海外",
+      "buy_point": 0,
+      "sell_point": 0,
+      "start_date": "2025-03-05",
+      "weeks": 15,
+      "market_cap": 0,
+      "year_start_price": 0.0
+    }
+  ],
+  "nav": {
+    "base_date": "2026-01-01",
+    "base_value": 1.0
+  },
+  "annual_records": [
+    {
+      "year": "2021/1/6",
+      "real_years": 0,
+      "real_return": 0,
+      "real_nav": 1.0,
+      "real_annualized": 0,
+      "index_return": 0,
+      "index_price": 2.458,
+      "index_annualized": 0
+    },
+    {
+      "year": "2021",
+      "real_years": 1,
+      "real_return": -0.1146,
+      "real_nav": 0.8854,
+      "real_annualized": -0.1146,
+      "index_return": -0.0675,
+      "index_price": 2.292,
+      "index_annualized": -0.0675
+    },
+    {
+      "year": "2022",
+      "real_years": 2,
+      "real_return": -0.0994,
+      "real_nav": 0.7974,
+      "real_annualized": -0.107,
+      "index_return": -0.195,
+      "index_price": 1.845,
+      "index_annualized": -0.1336
+    },
+    {
+      "year": "2023",
+      "real_years": 3,
+      "real_return": -0.0748,
+      "real_nav": 0.7377,
+      "real_annualized": -0.0964,
+      "index_return": -0.0932,
+      "index_price": 1.673,
+      "index_annualized": -0.1204
+    },
+    {
+      "year": "2024",
+      "real_years": 4,
+      "real_return": 0.1896,
+      "real_nav": 0.8776,
+      "real_annualized": -0.0321,
+      "index_return": 0.1781,
+      "index_price": 1.971,
+      "index_annualized": -0.0537
+    },
+    {
+      "year": "2025",
+      "real_years": 5,
+      "real_return": 0.1537,
+      "real_nav": 1.0125,
+      "real_annualized": 0.0025,
+      "index_return": 0.2019,
+      "index_price": 2.369,
+      "index_annualized": -0.0073
+    },
+    {
+      "year": "2026/4/25",
+      "real_years": 5.3,
+      "real_return": -0.1373,
+      "real_nav": 0.874,
+      "real_annualized": -0.0252,
+      "index_return": 0.0367,
+      "index_price": 2.456,
+      "index_annualized": -0.0002
+    }
+  ]
+}

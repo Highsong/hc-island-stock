@@ -1,19 +1,20 @@
-# 茅台年报分析系统
+# 📊 通用股票财务分析系统
 
-基于Streamlit的贵州茅台年报智能分析工具，支持财务数据分析、趋势可视化和智能评语生成。
+基于Streamlit的通用股票财务分析工具，支持A股和港股数据分析、趋势可视化和智能分析洞察。
 
 ## ✨ 核心功能
 
 ### 📊 数据分析
-- **PDF智能解析**: 自动提取年报中的财务数据
-- **10年历史分析**: 支持2016-2025年完整财务数据分析
-- **季度深度分析**: 近3年季度业绩趋势分析
+- **API数据获取**: 基于AKshare API获取实时财务数据
+- **多股票支持**: 支持A股和港股分析
+- **多周期分析**: 支持年度、半年度、季度数据分析
+- **智能缓存**: 自动缓存数据，提高访问速度
 - **多维度指标**: 盈利能力、成长性、流动性、杠杆水平全面分析
 
 ### 📈 可视化展示
 - **交互式图表**: Plotly动态图表，支持缩放、筛选
 - **多种图表类型**: 折线图、柱状图、饼图、瀑布图、双轴图
-- **专业配色方案**: 茅台主题色彩，视觉体验优秀
+- **专业配色方案**: 企业财务分析主题色彩，视觉体验优秀
 - **一键导出**: 支持PNG、PDF、Excel格式导出
 
 ### 💡 智能分析
@@ -26,66 +27,75 @@
 
 ### 环境要求
 - Python 3.11+
-- 足够的磁盘空间存储PDF文件
+- 网络连接（用于获取股票数据）
 
 ### 安装步骤
 
 1. **克隆项目**
 ```bash
 git clone <repository-url>
-cd moutai-analysis
+cd stock-analysis
 ```
 
 2. **安装依赖**
 ```bash
 pip install -r requirements.txt
+pip install akshare
 ```
 
-3. **准备数据**
-- 将茅台年报PDF文件放入 `data/raw_pdfs/` 目录
-- 支持的文件命名格式：`02MT2025年年报.pdf`
-
-4. **启动应用**
+3. **启动应用**
 ```bash
-streamlit run src/app.py
+streamlit run src/app_new.py
 ```
 
-5. **访问应用**
+4. **访问应用**
 - 打开浏览器访问: `http://localhost:8501`
+
+5. **开始分析**
+- 输入股票代码（如：000858、600519、0700.HK）
+- 选择数据周期和分析范围
+- 点击"开始分析"按钮
 
 ## 📁 项目结构
 
 ```
-moutai-analysis/
+stock-analysis/
 ├── data/                    # 数据目录
-│   ├── raw_pdfs/          # 原始PDF文件
-│   └── processed_data/    # 处理后的JSON数据
+│   └── cache/             # 缓存数据（新增）
 ├── src/                    # 源代码
-│   ├── data_extraction/   # PDF数据提取
+│   ├── data_extraction/   # 数据提取
+│   │   ├── stock_data_source.py  # 股票数据源（新增）
+│   │   └── data_source.py       # 原数据源（保留）
 │   ├── analysis/          # 财务分析
+│   │   └── financial_metrics.py # 财务指标（增强）
 │   ├── visualization/     # 图表可视化
 │   ├── utils/             # 工具函数
-│   └── app.py            # Streamlit主应用
+│   │   ├── helpers.py           # 辅助函数（更新）
+│   │   └── cache_manager.py     # 缓存管理（新增）
+│   ├── app_new.py         # 新主应用（推荐使用）
+│   └── app.py             # 原主应用（保留）
 ├── tests/                  # 测试代码
 ├── docs/                   # 文档
 ├── requirements.txt        # 依赖包
-└── README.md              # 项目说明
+├── README.md              # 项目说明
+├── QUICK_START.md         # 快速开始指南（新增）
+└── UPGRADE_GUIDE.md       # 升级指南（新增）
 ```
 
 ## 🎯 使用说明
 
 ### 主界面功能
 
-1. **侧边栏控制**
-   - 年份选择：支持多选进行对比分析
-   - 分析类型：单年分析、多年趋势、季度分析、综合报告
-   - 指标筛选：选择关注的财务指标类别
-   - 导出设置：选择图表导出格式
+1. **股票选择区域**
+   - 股票代码输入：支持A股和港股代码
+   - 数据周期选择：年度、半年度、季度
+   - 年份范围设置：自定义分析时间范围
+   - 分析按钮：开始数据分析
 
 2. **四个主要标签页**
    - **财务概览**: 关键指标卡片和核心图表
    - **趋势分析**: 多年数据趋势对比
-   - **季度分析**: 季度业绩和季节性分析
+   - **周期分析**: 季度/半年度业绩分析
    - **综合报告**: 完整的分析报告
 
 ### 交互功能
@@ -97,16 +107,18 @@ moutai-analysis/
 
 ## 🔄 数据更新
 
-### 自动更新
-1. 将新的年报PDF文件复制到 `data/raw_pdfs/` 目录
-2. 系统自动检测新文件
-3. 点击"刷新数据"按钮更新分析
+### 自动缓存更新
+- 数据自动缓存7天
+- 过期后自动重新获取最新数据
+- 网络异常时使用缓存数据
 
-### 手动更新
-```python
-# 在应用中点击"重新处理数据"按钮
-# 或重启Streamlit应用
-streamlit run src/app.py
+### 手动清理缓存
+```bash
+# 删除缓存目录
+rm -rf data/cache/
+
+# 或在应用中重新分析
+streamlit run src/app_new.py
 ```
 
 ## 📊 分析指标
@@ -135,8 +147,9 @@ streamlit run src/app.py
 
 - **前端**: Streamlit, Plotly
 - **后端**: Python, pandas, numpy
-- **数据处理**: pdfplumber, openpyxl
+- **数据源**: AKshare API
 - **可视化**: plotly, matplotlib
+- **缓存**: 本地JSON缓存
 - **工具**: pytest, black, flake8
 
 ## 📈 示例分析

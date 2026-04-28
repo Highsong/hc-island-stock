@@ -6,7 +6,7 @@ import sys
 
 def setup_environment():
     """设置运行环境"""
-    print("🚀 正在设置茅台年报分析系统...")
+    print("🚀 正在设置通用股票财务分析系统...")
 
     # 检查Python版本
     if sys.version_info < (3, 8):
@@ -42,8 +42,8 @@ def setup_environment():
 
     print("\n🎉 环境设置完成！")
     print("\n📖 使用说明:")
-    print("1. 将茅台年报PDF文件放入 data/raw_pdfs/ 目录")
-    print("2. 运行: streamlit run src/app.py")
+    print("1. 系统已配置为通用企业财务分析，无需本地PDF文件")
+    print("2. 运行: streamlit run src/app_new.py")
     print("3. 在浏览器中访问: http://localhost:8501")
 
 if __name__ == "__main__":

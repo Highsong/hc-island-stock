@@ -1,0 +1,1 @@
+- [Cache Management Rules](cache_management_rules.md) — Critical rules for cache management to prevent sample data caching

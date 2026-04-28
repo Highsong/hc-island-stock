@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #ffffff; padding: 32px 40px; font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; }
+  h2 { font-size: 18px; font-weight: 700; margin: 36px 0 6px 0; color: #1a1a1a; }
+  .subtitle { font-size: 12px; color: #999; margin-bottom: 16px; }
+  .row { display: flex; gap: 40px; margin-bottom: 8px; }
+  table { border-collapse: collapse; }
+</style>
+</head>
+<body>
+
+<h2>方案A — 东方财富风格（专业财经风）</h2>
+<p class="subtitle">国内最主流财经数据展示风格 · 浅灰表头 + 红白 Badge + 清爽斑马纹</p>
+<div class="row">
+
+<!-- 财经风 主表 -->
+<div>
+<table class="finance-table" style="font-size:0.8rem; border-collapse:collapse;">
+<style>
+.finance-table thead th {
+  background:#f5f5f5; color:#333; font-weight:700;
+  padding:0.6rem 0.7rem; text-align:center; border:1px solid #eee;
+  border-bottom:2px solid #ccc; white-space:nowrap; font-size:0.8rem; letter-spacing:0.5px;
+}
+.finance-table tbody tr:nth-child(odd)  { background:#ffffff; }
+.finance-table tbody tr:nth-child(even) { background:#f8f9fa; }
+.finance-table tbody tr:hover { background:#e3f2fd !important; }
+.finance-table td {
+  padding:0.5rem 0.7rem; text-align:center; border:1px solid #eee;
+  white-space:nowrap; color:#222; font-weight:600;
+}
+.finance-table .badge-pos { display:inline-block; padding:0.15rem 0.55rem; border-radius:4px; background:#ffebee; color:#c62828; font-weight:700; font-size:0.75rem; }
+.finance-table .badge-neg { display:inline-block; padding:0.15rem 0.55rem; border-radius:4px; background:#e8f5e9; color:#2e7d32; font-weight:700; font-size:0.75rem; }
+.finance-table .badge-neu { display:inline-block; padding:0.15rem 0.55rem; border-radius:4px; background:#f5f5f5; color:#666; font-weight:600; font-size:0.75rem; }
+.finance-table tr.finance-special td {
+  background:#fff8e1 !important;
+  border-left:1px solid #ffe082; border-top:1px solid #ffe082;
+  border-bottom:1px solid #ffe082; border-right:1px solid #ffe082;
+  color:#5d4037; font-weight:700;
+}
+.finance-table tr.finance-special td:last-child { border-right:none; }
+.finance-table .buy  { color:#c62828; font-weight:700; }
+.finance-table .sell { color:#2e7d32; font-weight:700; }
+.finance-sep td { padding:0; height:1px; background:#ffb300 !important; border:none !important; }
+</style>
+<thead>
+<tr><th>代码</th><th>名称</th><th>持仓</th><th>现价</th><th>成本</th><th>市值</th><th>盈亏</th><th>操作</th></tr>
+</thead>
+<tbody>
+<tr><td>600519</td><td>贵州茅台</td><td>100</td><td><span class="buy">1688</span></td><td>1420</td><td>168,800</td><td><span class="badge-pos">+18.9%</span></td><td><span class="sell">止盈</span></td></tr>
+<tr><td>000858</td><td>五粮液</td><td>500</td><td><span class="sell">156</span></td><td>170</td><td>78,000</td><td><span class="badge-neg">-8.2%</span></td><td><span class="buy">加仓</span></td></tr>
+<tr><td>601318</td><td>中国平安</td><td>1000</td><td><span class="badge-neu">48.6</span></td><td>48.6</td><td>48,600</td><td class="badge-neu">0.0%</td><td>-</td></tr>
+<tr><td colspan="8" class="finance-sep"></td></tr>
+<tr class="finance-special"><td colspan="2">📊 实盘净值</td><td colspan="2">--</td><td colspan="2">295,400</td><td colspan="2"><span class="badge-pos">+12.5%</span></td></tr>
+<tr class="finance-special"><td colspan="2">📈 沪深300</td><td colspan="2">--</td><td colspan="2">4,120</td><td colspan="2"><span class="badge-neg">-3.2%</span></td></tr>
+<tr class="finance-special"><td colspan="2">💱 港币汇率</td><td colspan="2">--</td><td colspan="2">0.92</td><td colspan="2"><span class="badge-neu">--</span></td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+<h2>方案B — 雪球风格（极简杂志风）</h2>
+<p class="subtitle">极简杂志风 · 透明表头 + 细线分隔 + 无框线设计</p>
+<div class="row">
+
+<div>
+<table class="magazine-table" style="font-size:0.88rem; border-collapse:collapse;">
+<style>
+.magazine-table thead th {
+  background:transparent; color:#888; font-weight:500;
+  padding:0.7rem 0.8rem 0.5rem 0.8rem; text-align:center; border:none;
+  border-bottom:2px solid #ddd; white-space:nowrap; font-size:0.82rem; letter-spacing:1px;
+}
+.magazine-table tbody tr { border-bottom:1px solid #f0f0f0; }
+.magazine-table tbody tr:hover { background:#fafafa; }
+.magazine-table td {
+  padding:0.7rem 0.8rem; text-align:center; white-space:nowrap;
+  color:#333; font-weight:500;
+}
+.magazine-table .col-name { text-align:left !important; font-weight:600; color:#111; }
+.magazine-table .text-pos { color:#d32f2f; font-weight:600; }
+.magazine-table .text-neg { color:#388e3c; font-weight:600; }
+.magazine-table .text-neu { color:#999; }
+.magazine-table tr.magazine-special { background:#fafafa; }
+.magazine-table tr.magazine-special td {
+  font-weight:600; color:#444;
+  border-top:1px solid #eee; border-right:1px solid #f0f0f0;
+}
+.magazine-table tr.magazine-special td:last-child { border-right:none; }
+.magazine-table .buy  { color:#d32f2f; font-weight:700; }
+.magazine-table .sell { color:#388e3c; font-weight:700; }
+.magazine-sep td { padding:0; height:1px; background:#ddd !important; border:none !important; }
+</style>
+<thead>
+<tr><th>代码</th><th>名称</th><th>持仓</th><th>现价</th><th>成本</th><th>市值</th><th>盈亏</th><th>操作</th></tr>
+</thead>
+<tbody>
+<tr><td>600519</td><td class="col-name">贵州茅台</td><td>100</td><td class="buy">1688</td><td>1420</td><td>168,800</td><td class="text-pos">+18.9%</td><td class="sell">止盈</td></tr>
+<tr><td>000858</td><td class="col-name">五粮液</td><td>500</td><td class="sell">156</td><td>170</td><td>78,000</td><td class="text-neg">-8.2%</td><td class="buy">加仓</td></tr>
+<tr><td>601318</td><td class="col-name">中国平安</td><td>1000</td><td class="text-neu">48.6</td><td>48.6</td><td>48,600</td><td class="text-neu">0.0%</td><td>-</td></tr>
+<tr><td colspan="8" class="magazine-sep"></td></tr>
+<tr class="magazine-special"><td colspan="2">📊 实盘净值</td><td colspan="2">--</td><td colspan="2">295,400</td><td colspan="2" class="text-pos">+12.5%</td></tr>
+<tr class="magazine-special"><td colspan="2">📈 沪深300</td><td colspan="2">--</td><td colspan="2">4,120</td><td colspan="2" class="text-neg">-3.2%</td></tr>
+<tr class="magazine-special"><td colspan="2">💱 港币汇率</td><td colspan="2">--</td><td colspan="2">0.92</td><td colspan="2" class="text-neu">--</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+<h2>方案C — 同花顺 iFinD 风格（数据仪表盘风）</h2>
+<p class="subtitle">淡蓝科技感 · 浅蓝表头 + 蓝色系边框 + mini bar 进度条</p>
+<div class="row">
+
+<div>
+<table class="dashboard-table" style="font-size:0.78rem; border-collapse:collapse;">
+<style>
+.dashboard-table thead th {
+  background:#e8f0fe; color:#1565c0; font-weight:700;
+  padding:0.6rem 0.7rem; text-align:center; border:1px solid #bbdefb;
+  border-bottom:2px solid #90caf9; white-space:nowrap;
+  font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;
+}
+.dashboard-table tbody tr:nth-child(odd)  { background:#ffffff; }
+.dashboard-table tbody tr:nth-child(even) { background:#f5f9ff; }
+.dashboard-table tbody tr:hover { background:#e1f5fe !important; }
+.dashboard-table td {
+  padding:0.5rem 0.7rem; text-align:center; white-space:nowrap;
+  color:#1a237e; font-weight:600; border:1px solid #bbdefb;
+}
+.dashboard-table .badge-pos { display:inline-block; padding:0.15rem 0.55rem; border-radius:4px; background:#fff3e0; color:#bf360c; font-weight:700; font-size:0.75rem; }
+.dashboard-table .badge-neg { display:inline-block; padding:0.15rem 0.55rem; border-radius:4px; background:#e0f2f1; color:#004d40; font-weight:700; font-size:0.75rem; }
+.dashboard-table .badge-neu { display:inline-block; padding:0.15rem 0.55rem; border-radius:4px; background:#f5f5f5; color:#616161; font-weight:600; font-size:0.75rem; }
+.dashboard-table .mini-bar-cell { min-width:130px; }
+.dashboard-table .mini-bar-track { display:inline-block; width:70px; height:8px; background:#e8e8e8; border-radius:4px; overflow:hidden; vertical-align:middle; }
+.dashboard-table .mini-bar-fill-pos { display:block; height:100%; border-radius:4px; background:linear-gradient(90deg,#ff7043,#ffab91); }
+.dashboard-table .mini-bar-fill-neg { display:block; height:100%; border-radius:4px; background:linear-gradient(90deg,#26a69a,#80cbc4); }
+.dashboard-table tr.dashboard-special td {
+  border-left:1px solid #bbdefb; border-right:1px solid #bbdefb;
+  background:#edf4fc !important; color:#1565c0 !important;
+}
+.dashboard-table tr.dashboard-special td:last-child { border-right:none; }
+.dashboard-table .buy  { color:#bf360c; font-weight:700; }
+.dashboard-table .sell { color:#004d40; font-weight:700; }
+.dashboard-sep td { padding:0; height:1px; background:#90caf9 !important; border:none !important; }
+</style>
+<thead>
+<tr><th>代码</th><th>名称</th><th>持仓</th><th>现价</th><th>成本</th><th>市值</th><th>盈亏</th><th>仓位</th><th>操作</th></tr>
+</thead>
+<tbody>
+<tr><td>600519</td><td>贵州茅台</td><td>100</td><td class="buy">1688</td><td>1420</td><td>168,800</td><td><span class="badge-pos">+18.9%</span></td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-pos" style="width:57%"></span></span></td><td class="sell">止盈</td></tr>
+<tr><td>000858</td><td>五粮液</td><td>500</td><td class="sell">156</td><td>170</td><td>78,000</td><td><span class="badge-neg">-8.2%</span></td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-pos" style="width:26%"></span></span></td><td class="buy">加仓</td></tr>
+<tr><td>601318</td><td>中国平安</td><td>1000</td><td class="badge-neu">48.6</td><td>48.6</td><td>48,600</td><td class="badge-neu">0.0%</td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-neg" style="width:17%"></span></span></td><td>-</td></tr>
+<tr><td colspan="9" class="dashboard-sep"></td></tr>
+<tr class="dashboard-special"><td colspan="2">📊 实盘净值</td><td colspan="2">--</td><td colspan="2">295,400</td><td colspan="2"><span class="badge-pos">+12.5%</span></td><td>--</td></tr>
+<tr class="dashboard-special"><td colspan="2">📈 沪深300</td><td colspan="2">--</td><td colspan="2">4,120</td><td colspan="2"><span class="badge-neg">-3.2%</span></td><td>--</td></tr>
+<tr class="dashboard-special"><td colspan="2">💱 港币汇率</td><td colspan="2">--</td><td colspan="2">0.92</td><td colspan="2"><span class="badge-neu">--</span></td><td>--</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div style="margin-top:48px; padding:20px; background:#f8f9fa; border-radius:8px; font-size:13px; color:#666;">
+  <b>说明：</b>三种方案均为淡色调，白色背景。差异主要在：<br>
+  ① <b>财经风</b>：浅灰表头 + 红绿涨跌 Badge（东方财富网风格）<br>
+  ② <b>杂志风</b>：透明表头 + 极细线 + 无框线（雪球风格）<br>
+  ③ <b>仪表盘风</b>：浅蓝表头 + 蓝色系 + mini bar（同花顺 iFinD 风格）<br><br>
+  页面中每个表格旁都有「🎨 自定义」按钮，可实时微调所有颜色。
+</div>
+
+</body>
+</html>

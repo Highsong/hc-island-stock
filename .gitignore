@@ -80,6 +80,14 @@ coverage.xml
 *.cover
 .hypothesis/
 
+# Sensitive config (contains real cookie - never commit)
+config/XueQiuCookie.txt
+
 # My specific ignores
 *.bak
 *.backup
+
+# Large raw data / cache files
+*.json.bak
+data/cache/*.json
+/.claude

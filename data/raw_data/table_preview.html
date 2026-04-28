@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<style>body{background:#0d1117;padding:20px;font-family:sans-serif;color:#fff;}
+h2{color:#fff;margin-top:30px;}</style>
+</head>
+<body>
+<h2>仪表盘风</h2>
+
+<style>
+/* ── 数据仪表盘风 ── */
+.dashboard-wrap { margin-top: 0.8rem; }
+.dashboard-table { width:100%; border-collapse:collapse; font-size:0.78rem; }
+.dashboard-table thead th {
+    background: linear-gradient(180deg, #254060 0%, #1b3050 100%);
+    color: #ffffff; font-weight:700; padding:0.6rem 0.7rem;
+    text-align:center; border:none; white-space:nowrap;
+    font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;
+    border-bottom: 2px solid #4a9eff;
+}
+.dashboard-table tbody tr:nth-child(odd)  { background: #1c2938; }
+.dashboard-table tbody tr:nth-child(even) { background: #162030; }
+.dashboard-table tbody tr:hover { background: rgba(56,139,253,0.18) !important; }
+.dashboard-table td {
+    padding:0.5rem 0.7rem; text-align:center; white-space:nowrap;
+    color: #f0f0f0; font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.dashboard-table .badge-pos {
+    display:inline-block; padding:0.15rem 0.55rem; border-radius:4px;
+    background: rgba(239,83,80,0.45); color:#ffffff; font-weight:700; font-size:0.75rem;
+}
+.dashboard-table .badge-neg {
+    display:inline-block; padding:0.15rem 0.55rem; border-radius:4px;
+    background: rgba(102,187,106,0.45); color:#ffffff; font-weight:700; font-size:0.75rem;
+}
+.dashboard-table .badge-neu {
+    display:inline-block; padding:0.15rem 0.55rem; border-radius:4px;
+    background: rgba(189,189,189,0.35); color:#ffffff; font-weight:600; font-size:0.75rem;
+}
+.dashboard-table .mini-bar-cell { min-width:130px; }
+.dashboard-table .mini-bar-track {
+    display:inline-block; width:70px; height:8px;
+    background: rgba(255,255,255,0.12); border-radius:4px;
+    overflow:hidden; vertical-align:middle;
+}
+.dashboard-table .mini-bar-fill-pos {
+    display:block; height:100%; border-radius:4px;
+    background: linear-gradient(90deg, #ff5252, #ff8a80);
+}
+.dashboard-table .mini-bar-fill-neg {
+    display:block; height:100%; border-radius:4px;
+    background: linear-gradient(90deg, #00c853, #69f0ae);
+}
+.dashboard-table tr.dashboard-special td {
+    border-left: 3px solid;
+    background: rgba(255,183,77,0.15) !important;
+    color: #ffd !important;
+}
+.dashboard-table .buy  { color:#ff8a80; font-weight:700; }
+.dashboard-table .sell { color:#69f0ae; font-weight:700; }
+</style>
+
+<div class="dashboard-wrap">
+<table class="dashboard-table">
+<thead><tr>
+<th>持股名称</th><th>持股比例</th><th>当前市值</th>
+<th>理想买点</th><th>年内卖点</th><th>当前股价</th><th>年内涨幅</th>
+</tr></thead>
+<tbody>
+<tr><td>腾讯控股</td><td>55%</td><td>4,200</td><td class="buy">46,500</td><td class="sell">128,000</td><td>365.500</td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-pos" style="width:60%;"></span></span><span class="badge-pos">+18.50%</span></td></tr>
+<tr><td>贵州茅台</td><td>15%</td><td>2,100</td><td class="buy">16,800</td><td class="sell">47,000</td><td>1,680.00</td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-neg" style="width:30%;"></span></span><span class="badge-neg">-5.20%</span></td></tr>
+<tr><td>分众传媒</td><td>12%</td><td>890</td><td class="buy">890</td><td class="sell">1,900</td><td>8.90</td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-pos" style="width:15%;"></span></span><span class="badge-pos">+3.10%</span></td></tr>
+<tr><td>古井贡B</td><td>7%</td><td>650</td><td class="buy">790</td><td class="sell">1,900</td><td>79.00</td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-neg" style="width:45%;"></span></span><span class="badge-neg">-12.30%</span></td></tr>
+<tr><td>银华日利</td><td>6%</td><td>100</td><td class="buy">—</td><td class="sell">—</td><td>100.235</td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-pos" style="width:5%;"></span></span><span class="badge-pos">+0.80%</span></td></tr>
+<tr><td>海康威视</td><td>4%</td><td>320</td><td class="buy">1,920</td><td class="sell">5,700</td><td>32.50</td><td class="mini-bar-cell"><span class="mini-bar-track"><span class="mini-bar-fill-neg" style="width:20%;"></span></span><span class="badge-neg">-8.40%</span></td></tr>
+<tr class="dashboard-special" style="border-left-color:#42A5F5;"><td>实盘净值</td><td colspan="2">基金净值法</td><td style="border-right:none;">周涨幅</td><td style="border-left:none;"><span class="badge-neg">-4.38%</span></td><td>0.874</td><td><span class="badge-neg">-13.73%</span></td></tr>
+<tr class="dashboard-special" style="border-left-color:#AB47BC;"><td>对比基准</td><td colspan="2">沪深300指数基金 510310</td><td style="border-right:none;">周涨幅</td><td style="border-left:none;"><span class="badge-pos">+1.20%</span></td><td>4.321</td><td><span class="badge-pos">+3.67%</span></td></tr>
+<tr class="dashboard-special" style="border-left-color:#FFA726;"><td>2026/04/25</td><td colspan="2">市值亿元，腾讯古B股价为港币</td><td colspan="2" style="text-align:right;">港币汇率</td><td>0.8713</td><td><span class="badge-neg">-2.10%</span></td></tr>
+</tbody></table>
+</div>
+<h2>专业财经风</h2>
+
+<style>
+/* ── 专业财经风 ── */
+.finance-wrap { margin-top: 0.8rem; }
+.finance-table { width:100%; border-collapse:collapse; font-size:0.8rem; }
+.finance-table thead th {
+    background: linear-gradient(180deg, #3d5a99 0%, #2c4a7c 100%);
+    color: #ffffff; font-weight:700; padding:0.6rem 0.7rem;
+    text-align:center; border:none; white-space:nowrap;
+    font-size:0.8rem; letter-spacing:0.5px;
+}
+.finance-table thead th:first-child { border-radius:6px 0 0 0; }
+.finance-table thead th:last-child { border-radius:0 6px 0 0; }
+.finance-table tbody tr:nth-child(odd)  { background: #2a3a4e; }
+.finance-table tbody tr:nth-child(even) { background: #233044; }
+.finance-table tbody tr:hover { background: rgba(66,165,245,0.2) !important; }
+.finance-table td {
+    padding:0.5rem 0.7rem; text-align:center;
+    border-bottom:1px solid rgba(255,255,255,0.08); white-space:nowrap;
+    color:#f0f0f0; font-weight:600;
+}
+.finance-table .badge-pos {
+    display:inline-block; padding:0.15rem 0.55rem; border-radius:4px;
+    background: rgba(239,83,80,0.4); color:#ffffff; font-weight:700; font-size:0.75rem;
+}
+.finance-table .badge-neg {
+    display:inline-block; padding:0.15rem 0.55rem; border-radius:4px;
+    background: rgba(102,187,106,0.4); color:#ffffff; font-weight:700; font-size:0.75rem;
+}
+.finance-table .badge-neu {
+    display:inline-block; padding:0.15rem 0.55rem; border-radius:4px;
+    background: rgba(189,189,189,0.3); color:#ffffff; font-weight:600; font-size:0.75rem;
+}
+.finance-table tr.finance-special {
+    background: linear-gradient(90deg, rgba(255,183,77,0.35) 0%, rgba(255,183,77,0.18) 100%) !important;
+}
+.finance-table tr.finance-special td {
+    border-left: 3px solid #FFB74D;
+    border-top: 1px solid rgba(255,183,77,0.45);
+    border-bottom: 1px solid rgba(255,183,77,0.45);
+    color: #fff3e0; font-weight:700;
+}
+.finance-table .buy  { color:#ff6b6b; font-weight:700; }
+.finance-table .sell { color:#81c784; font-weight:700; }
+</style>
+
+<div class="finance-wrap">
+<table class="finance-table">
+<thead><tr>
+<th>持股名称</th><th>持股比例</th><th>当前市值</th>
+<th>理想买点</th><th>年内卖点</th><th>当前股价</th><th>年内涨幅</th>
+</tr></thead>
+<tbody>
+<tr><td>腾讯控股</td><td>55%</td><td>4,200</td><td class="buy">46,500</td><td class="sell">128,000</td><td>365.500</td><td><span class="badge-pos">+18.50%</span></td></tr>
+<tr><td>贵州茅台</td><td>15%</td><td>2,100</td><td class="buy">16,800</td><td class="sell">47,000</td><td>1,680.00</td><td><span class="badge-neg">-5.20%</span></td></tr>
+<tr><td>分众传媒</td><td>12%</td><td>890</td><td class="buy">890</td><td class="sell">1,900</td><td>8.90</td><td><span class="badge-pos">+3.10%</span></td></tr>
+<tr><td>古井贡B</td><td>7%</td><td>650</td><td class="buy">790</td><td class="sell">1,900</td><td>79.00</td><td><span class="badge-neg">-12.30%</span></td></tr>
+<tr><td>银华日利</td><td>6%</td><td>100</td><td class="buy">—</td><td class="sell">—</td><td>100.235</td><td><span class="badge-pos">+0.80%</span></td></tr>
+<tr><td>海康威视</td><td>4%</td><td>320</td><td class="buy">1,920</td><td class="sell">5,700</td><td>32.50</td><td><span class="badge-neg">-8.40%</span></td></tr>
+<tr class="finance-special"><td>实盘净值</td><td colspan="2">基金净值法</td><td style="border-right:none;">周涨幅</td><td style="border-left:none;"><span class="badge-neg">-4.38%</span></td><td>0.874</td><td><span class="badge-neg">-13.73%</span></td></tr>
+<tr class="finance-special"><td>对比基准</td><td colspan="2">沪深300指数基金 510310</td><td style="border-right:none;">周涨幅</td><td style="border-left:none;"><span class="badge-pos">+1.20%</span></td><td>4.321</td><td><span class="badge-pos">+3.67%</span></td></tr>
+<tr class="finance-special"><td>2026/04/25</td><td colspan="2">市值亿元，腾讯古B股价为港币</td><td colspan="2" style="text-align:right;">港币汇率</td><td>0.8713</td><td><span class="badge-neg">-2.10%</span></td></tr>
+</tbody></table>
+</div>
+<h2>极简杂志风</h2>
+
+<style>
+/* ── 极简杂志风 ── */
+.magazine-wrap { margin-top: 0.8rem; }
+.magazine-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+.magazine-table thead th {
+    background: transparent; color:#333;
+    font-weight:500; padding:0.7rem 0.8rem 0.5rem 0.8rem;
+    text-align:center; border:none;
+    border-bottom: 2px solid #222;
+    white-space:nowrap; font-size:0.82rem; letter-spacing:1px;
+}
+.magazine-table tbody tr { border-bottom: 1px solid rgba(0,0,0,0.08); }
+.magazine-table tbody tr:hover { background: rgba(0,0,0,0.03); }
+.magazine-table td {
+    padding:0.7rem 0.8rem; text-align:center; white-space:nowrap;
+    color:#1a1a1a; font-weight:500;
+}
+.magazine-table .col-name { text-align:left !important; font-weight:700; color:#111; }
+.magazine-table .text-pos { color:#b71c1c; font-weight:600; }
+.magazine-table .text-neg { color:#1b5e20; font-weight:600; }
+.magazine-table .text-neu { color:#666; }
+.magazine-table tr.magazine-special { background: rgba(0,0,0,0.04); }
+.magazine-table tr.magazine-special td { font-weight:600; color:#222; }
+.magazine-table .buy  { color:#b71c1c; font-weight:700; }
+.magazine-table .sell { color:#1b5e20; font-weight:700; }
+</style>
+
+<div class="magazine-wrap">
+<table class="magazine-table">
+<thead><tr>
+<th>持股名称</th><th>持股比例</th><th>当前市值</th>
+<th>理想买点</th><th>年内卖点</th><th>当前股价</th><th>年内涨幅</th>
+</tr></thead>
+<tbody>
+<tr><td class="col-name">腾讯控股</td><td>55%</td><td>4,200</td><td class="buy">46,500</td><td class="sell">128,000</td><td>365.500</td><td class="text-pos">+18.50%</td></tr>
+<tr><td class="col-name">贵州茅台</td><td>15%</td><td>2,100</td><td class="buy">16,800</td><td class="sell">47,000</td><td>1,680.00</td><td class="text-neg">-5.20%</td></tr>
+<tr><td class="col-name">分众传媒</td><td>12%</td><td>890</td><td class="buy">890</td><td class="sell">1,900</td><td>8.90</td><td class="text-pos">+3.10%</td></tr>
+<tr><td class="col-name">古井贡B</td><td>7%</td><td>650</td><td class="buy">790</td><td class="sell">1,900</td><td>79.00</td><td class="text-neg">-12.30%</td></tr>
+<tr><td class="col-name">银华日利</td><td>6%</td><td>100</td><td class="buy">—</td><td class="sell">—</td><td>100.235</td><td class="text-pos">+0.80%</td></tr>
+<tr><td class="col-name">海康威视</td><td>4%</td><td>320</td><td class="buy">1,920</td><td class="sell">5,700</td><td>32.50</td><td class="text-neg">-8.40%</td></tr>
+<tr class="magazine-special"><td class="col-name">实盘净值</td><td colspan="2">基金净值法</td><td style="border-right:none;">周涨幅</td><td style="border-left:none;"><span class="text-neg">-4.38%</span></td><td>0.874</td><td class="text-neg">-13.73%</td></tr>
+<tr class="magazine-special"><td class="col-name">对比基准</td><td colspan="2">沪深300指数基金 510310</td><td style="border-right:none;">周涨幅</td><td style="border-left:none;"><span class="text-pos">+1.20%</span></td><td>4.321</td><td class="text-pos">+3.67%</td></tr>
+<tr class="magazine-special"><td class="col-name">2026/04/25</td><td colspan="2">市值亿元，腾讯古B股价为港币</td><td colspan="2" style="text-align:right;">港币汇率</td><td>0.8713</td><td class="text-neg">-2.10%</td></tr>
+</tbody></table>
+</div>
+</body></html>
