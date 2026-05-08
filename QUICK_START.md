@@ -1,142 +1,67 @@
-# 🚀 财务分析系统快速启动指南
+# 快速开始
 
-## 📋 系统概述
-
-这是一个企业级的股票财务分析系统，支持A股和港股数据分析，具备完整的财务指标计算、趋势分析、数据可视化和专业报告生成功能。
-
-## ⚡ 快速启动
-
-### Windows用户推荐方式
-
-1. **使用批处理脚本启动**（推荐）
-   ```batch
-   scripts\start_app_with_encoding.bat
-   ```
-
-2. **或使用环境设置脚本**
-   ```batch
-   scripts\set_environment.bat
-   streamlit run src/app_new.py
-   ```
-
-### 通用启动方式
-
-1. **环境准备**
-   ```bash
-   # 安装依赖
-   pip install -r requirements.txt
-   ```
-
-2. **启动应用**
-   ```bash
-   # 启动Streamlit应用
-   streamlit run src/app_new.py
-   ```
-
-3. **访问应用**
-   打开浏览器访问: http://localhost:8501
-
-## 🎯 使用说明
-
-### 基本分析流程
-
-1. **输入股票代码** - 在左侧边栏输入股票代码
-   - A股示例: `600519` (贵州茅台), `000858` (五粮液)
-   - 港股示例: `0700.HK` (腾讯), `0941.HK` (中国移动)
-
-2. **选择数据周期** - 年度/半年度/季度
-
-3. **设置年份范围** - 默认分析最近5年数据
-
-4. **点击"开始分析"** - 系统自动获取数据并生成分析报告
-
-### 功能模块
-
-- **📊 财务概览**: 关键财务指标和趋势图表
-- **📈 趋势分析**: 复合增长率和趋势方向分析  
-- **🔍 周期分析**: 季度/半年度业绩分析
-- **📋 综合报告**: 执行摘要、风险评估、投资建议
-
-## 🛠️ 故障排除
-
-### 常见问题
-
-**Q: 应用无法启动**
-A: 确保已安装所有依赖: `pip install -r requirements.txt`
-
-**Q: 无法获取股票数据**
-A: 系统会自动降级使用示例数据，确保分析功能正常
-
-**Q: 图表显示异常**
-A: 刷新页面或重新运行分析
-
-### 测试验证
+## 1. 安装依赖
 
 ```bash
-# 运行基础功能测试
-python test/test_imports.py
-
-# 运行完整流程测试  
-python test/test_complete_flow.py
+pip install -r requirements.txt
 ```
 
-## 📁 项目结构
+核心依赖：`streamlit` `plotly` `akshare` `pandas` `numpy` `requests`
 
-```
-src/
-├── app_new.py                 # 主应用入口
-├── analysis/                  # 分析模块
-│   ├── financial_metrics.py   # 财务指标计算
-│   ├── trend_analysis.py      # 趋势分析
-│   └── insights_generator.py  # 洞察生成
-├── data_extraction/           # 数据提取模块
-│   └── stock_data_source.py   # 股票数据源
-├── visualization/             # 可视化模块
-│   ├── chart_generator.py     # 图表生成
-│   └── dashboard_layout.py    # 仪表板布局
-└── utils/                     # 工具模块
-    ├── cache_manager.py       # 缓存管理
-    ├── helpers.py             # 辅助函数
-    └── user_experience.py     # 用户体验
+## 2. 启动应用
+
+```bash
+streamlit run src/app_new.py
 ```
 
-## 📊 核心功能
+浏览器自动打开 `http://localhost:8501`。
 
-### 财务分析
-- 盈利能力分析（净利润率、毛利率）
-- 增长能力分析（营收增长率、利润增长率）
-- 流动性分析（流动比率、速动比率）
-- 杠杆分析（资产负债率、权益乘数）
+## 3. 首次使用
 
-### 数据可视化
-- 营收趋势图（线图）
-- 利润对比图（柱状图）
-- 财务指标雷达图
-- 多维度数据展示
+### 3.1 配置雪球 Cookie（推荐）
 
-### 智能洞察
-- 财务健康状况评估
-- 业务发展趋势分析
-- 风险因素识别
-- 投资建议生成
+财务数据（资产负债表/利润表/现金流量表）需要雪球 Cookie 才能获取完整数据。
 
-## 🔧 技术栈
+1. 浏览器打开 <https://xueqiu.com> 并登录
+2. 按 F12 打开开发者工具 → Application → Cookies → `https://xueqiu.com`
+3. 复制 `xq_a_token` 的值
+4. 将值写入 `config/XueQiuCookie.txt`（单行，无引号）
 
-- **前端**: Streamlit 1.24+
-- **数据处理**: Pandas 2.0+, NumPy 1.24+
-- **可视化**: Plotly 5.15+
-- **数据源**: AKShare 1.11+
-- **缓存**: 本地文件缓存
+```
+abc123def456...
+```
 
-## 📞 支持
+> 没有 Cookie 也勉强能用，系统会降级到 AKShare + 示例数据，【且数据将变得不可信】。
 
-如遇问题，请检查：
-1. Python版本 >= 3.8
-2. 所有依赖已正确安装
-3. 网络连接正常（用于获取实时数据）
+### 3.2 配置持仓（可选）
 
----
+编辑 `data/portfolio.json`，格式见 [docs/CONFIG.md](docs/CONFIG.md)。
 
-**系统状态**: ✅ 生产就绪
-**最后更新**: 2024年4月23日
-**版本**: 1.0.0
+## 4. 使用
+
+### 股票分析页
+
+1. 左侧边栏输入股票代码（如 `000858`）或名称（如 `五粮液`）
+2. 选择分析时间范围
+3. 查看财务指标、趋势图表、杜邦分析、波特五力、智能评语
+
+### 投资组合页
+
+1. 左侧边栏点击「我的投资」
+2. Tab 1「周记」：查看持仓明细、买点/卖点、年内涨幅
+3. Tab 2「年化收益」：查看年度实盘收益 vs 指数对比
+
+## 常见问题
+
+| 问题 | 解决方案 |
+|------|----------|
+| 数据加载失败 | 检查网络；配置雪球 Cookie 获取更稳定的数据 |
+| AKShare 报错 | 正常现象，系统会自动降级到示例数据 |
+| 图表不显示 | 确保浏览器支持 JavaScript |
+| 港股数据不准确 | 检查 `adapters/tencent.py` 港汇接口是否正常 |
+
+## 下一步
+
+- [配置说明](docs/CONFIG.md) — 详细的 Cookie 获取步骤、持仓配置格式
+- [架构设计](docs/ARCHITECTURE.md) — 了解系统架构和数据流
+- [数据源说明](docs/DATA_SOURCES.md) — 数据获取策略和降级机制
